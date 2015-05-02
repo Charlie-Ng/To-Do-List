@@ -1,0 +1,50 @@
+<head>
+  <meta charest="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To Do List</title>
+     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <style>
+    </style>
+
+</head>
+
+<body>
+
+<nav>
+    <i class="fa fa-cog faStyle"></i>
+    <a id="navA" href="#">{{>loginButtons}}</a>
+    <span id="appTitle">To-Do-List</span>
+    <a id="clearItems" href="#">clear</a>
+</nav>
+{{> lanuch}}
+
+</body>
+
+<template name="lanuch">
+
+    <div class="row listArea" >
+        <div class="col-sm-12">
+            <ul id="lists">
+                {{#each tasks}}
+
+                    <div class="row">
+                        <div class="col-sm-12"><li>{{content}}<i class="fa fa-minus fa-2x noClicked"></i></li></div>
+                    </div>
+
+                {{/each}}
+
+                {{#each tasks}}
+                    {{addEffectEvent}}
+                    {{addRemoveEvent}}
+                {{/each}}
+
+            </ul>
+            <div class="row" id="addOption" >
+                <div class="col-sm-12"><i class="fa fa-plus fa-2x"></i></div>
+            </div>
+        </div>
+    </div>
+
+</template>
+
+
